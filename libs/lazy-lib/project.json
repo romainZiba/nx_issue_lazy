@@ -1,0 +1,38 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/lazy-lib/src",
+  "prefix": "laz",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/lazy-lib"],
+      "options": {
+        "project": "libs/lazy-lib/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/lazy-lib/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/lazy-lib/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/lazy-lib"],
+      "options": {
+        "jestConfig": "libs/lazy-lib/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/lazy-lib/**/*.ts", "libs/lazy-lib/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

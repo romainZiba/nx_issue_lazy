@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "lazy-lib": "libs/lazy-lib",
     "repro": "apps/repro",
     "repro-e2e": "apps/repro-e2e"
   }
